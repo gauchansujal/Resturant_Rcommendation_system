@@ -1,0 +1,1715 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-06-26T11:50:55Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/206894691",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "pizza",
+        "name": "Sal's Pizza",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3186209,
+          27.721173
+        ]
+      },
+      "id": "way/206894691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/341364774",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "bagel;coffee",
+        "name": "Bagels",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.310705,
+          27.7139833
+        ]
+      },
+      "id": "way/341364774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/341709496",
+        "addr:city": "Kathmandu, Thamel",
+        "addr:housenumber": "17",
+        "addr:postcode": "44600",
+        "addr:street": "J.P. Road",
+        "amenity": "restaurant",
+        "building": "yes",
+        "capacity": "45",
+        "contact:facebook": "https://www.facebook.com/paletibhanchhaghar/",
+        "contact:website": "https://www.paletibhanchhaghar.com/",
+        "cuisine": "regional;asian;lunch;dinner;chicken;fish_and_chips;trout;nepali;wine;beer",
+        "description": "Paleti Bhanchha Ghar is an authentic Restaurant & Bar located in Thamel J.P. Marg and specialized for typical Nepali foods and environment. We serve Nepali Thali Set, Nepali Faper/Kodo Dhido Set, Nepali Faper/Kodo Roti Set, Trout Fish, Nepali Khaja set...",
+        "diet:vegetarian": "yes",
+        "email": "paletibhanchhaghar@gmail.com",
+        "name": "Paleti Bhanchha Ghar Restaurant & Bar",
+        "opening_hours": "Mo-Sa 10:00-22:00",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:visa": "yes",
+        "phone": "+977 1-4212911",
+        "smoking": "isolated",
+        "source": "nextview",
+        "takeaway": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3102763,
+          27.7120684
+        ]
+      },
+      "id": "way/341709496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/530219173",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Fren's Kitchen",
+        "outdoor_seating": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3126782,
+          27.7115272
+        ]
+      },
+      "id": "way/530219173"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/550485690",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "regional",
+        "name": "Dechenling Garden Restaurant",
+        "name:de": "Dechenling Garden Restaurant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3138905,
+          27.7148
+        ]
+      },
+      "id": "way/550485690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/568545483",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "काठमाडौं भान्सा",
+        "name:en": "Kathmandu Kitchen",
+        "name:ne": "काठमाडौं भान्सा"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3164252,
+          27.7092855
+        ]
+      },
+      "id": "node/568545483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/708987886",
+        "amenity": "restaurant",
+        "check_date": "2025-07-31",
+        "cuisine": "regional",
+        "name": "Delima Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3097712,
+          27.7153737
+        ]
+      },
+      "id": "node/708987886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1349658498",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "internet_access": "wlan",
+        "name": "मोमोटारु रेस्टुरेन्ट",
+        "name:en": "Momotarou Restaurant",
+        "name:ja": "桃太郎",
+        "name:ne": "मोमोटारु रेस्टुरेन्ट",
+        "opening_hours": "Mo-Su 10:00-21:30",
+        "phone": "+977 4417670"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3116812,
+          27.716211
+        ]
+      },
+      "id": "node/1349658498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1534450706",
+        "amenity": "restaurant",
+        "cuisine": "north-korean",
+        "name": "Pyongyang Okryu Gwan Restaurant",
+        "phone": "4233288"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3196628,
+          27.7110529
+        ]
+      },
+      "id": "node/1534450706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1875597196",
+        "addr:city": "Kathmandu",
+        "addr:housename": "Sanchaya kosh Bhawan",
+        "addr:housenumber": "219",
+        "addr:street": "Tridevi Marg",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "email": "fireandicepizzeria@hotmail.com",
+        "name": "फाएर एण्ड आइस रेष्टुरेन्ट",
+        "name:en": "Fire & Ice Restaurant",
+        "name:ne": "फाएर एण्ड आइस रेष्टुरेन्ट",
+        "phone": "+977 1 4250210",
+        "website": "https://www.fireandicepizzeria.com/kathmandu.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3136388,
+          27.7137939
+        ]
+      },
+      "id": "node/1875597196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1930532956",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/pages/Or2K-Thamel/416714001686263",
+        "cuisine": "asian;burger;grill;indian;steak_house;sandwich",
+        "diet:vegetarian": "only",
+        "internet_access": "wlan",
+        "name": "OR2K"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3110168,
+          27.7148007
+        ]
+      },
+      "id": "node/1930532956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1956218974",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "दा हुआ चिनियाँ रेस्टुरेन्ट",
+        "name:en": "Da Hua Chinese Restaurant",
+        "name:ne": "दा हुआ चिनियाँ रेस्टुरेन्ट"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3124157,
+          27.7145505
+        ]
+      },
+      "id": "node/1956218974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2041594256",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "China Town Chinese Restaurant and bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3197181,
+          27.720709
+        ]
+      },
+      "id": "node/2041594256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2052479244",
+        "amenity": "restaurant",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "brand:wikipedia": "en:Pizza Hut",
+        "cuisine": "pizza",
+        "internet_access": "wlan",
+        "name": "Pizza Hut",
+        "name:en": "Pizza Hut",
+        "name:ne": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3172796,
+          27.7108625
+        ]
+      },
+      "id": "node/2052479244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2054176670",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Malta Restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3137924,
+          27.7081356
+        ]
+      },
+      "id": "node/2054176670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2066081758",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "indoor_seating": "yes",
+        "name": "Yak",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3111411,
+          27.7118107
+        ]
+      },
+      "id": "node/2066081758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2127168040",
+        "amenity": "restaurant",
+        "cuisine": "local",
+        "name": "न्यू एभरेष्ट मःमः सेन्टर",
+        "name:en": "New Everest Momo Centre",
+        "name:ne": "न्यू एभरेष्ट मःमः सेन्टर"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3111701,
+          27.7183737
+        ]
+      },
+      "id": "node/2127168040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212605788",
+        "amenity": "restaurant",
+        "check_date": "2024-03-12",
+        "cuisine": "indian;nepali",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Graveaty",
+        "name:en": "Graveaty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.313179,
+          27.7123375
+        ]
+      },
+      "id": "node/2212605788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2584754046",
+        "addr:city": "Kathmandu",
+        "addr:housename": "PAknajole, KAldhara Marga",
+        "addr:postcode": "00977",
+        "addr:street": "Pipalbote Marg",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Moon light"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.308037,
+          27.7169615
+        ]
+      },
+      "id": "node/2584754046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3176866861",
+        "addr:postcode": "44600",
+        "addr:street": "Chaksibari Marg",
+        "amenity": "restaurant",
+        "cuisine": "crepe;burger;african",
+        "diet:vegan": "yes",
+        "email": "Sandra@sarangi.com.np",
+        "internet_access": "wlan",
+        "name": "सारंगी रेस्टुरेन्ट",
+        "name:en": "Sarangi restaurant",
+        "name:ne": "सारंगी रेस्टुरेन्ट",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "operator": "Kedar gandarbha",
+        "website": "https://www.sarangi.com.np/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3099794,
+          27.7152806
+        ]
+      },
+      "id": "node/3176866861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3325034428",
+        "amenity": "restaurant",
+        "cuisine": "nepali",
+        "name": "नर्लिङ गजल",
+        "name:en": "Norling Gazal",
+        "name:ne": "नर्लिङ गजल"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3168492,
+          27.7099301
+        ]
+      },
+      "id": "node/3325034428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3341634378",
+        "amenity": "restaurant",
+        "cuisine": "Thakali",
+        "name": "Marpa Kitchen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3158724,
+          27.709512
+        ]
+      },
+      "id": "node/3341634378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3439270857",
+        "amenity": "restaurant",
+        "capacity": "30",
+        "cuisine": "regional;european",
+        "name": "Black Olives"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3101943,
+          27.7172002
+        ]
+      },
+      "id": "node/3439270857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3439274069",
+        "amenity": "restaurant",
+        "cuisine": "nepaleese",
+        "name": "म्याकडोनाल्ड रेस्टुरेन्ट",
+        "name:en": "McDonald Restaurant",
+        "name:ne": "म्याकडोनाल्ड रेस्टुरेन्ट"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3115782,
+          27.7165082
+        ]
+      },
+      "id": "node/3439274069"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3463824279",
+        "addr:city": "Kathmandu",
+        "addr:street": "Amrit Marg",
+        "amenity": "restaurant",
+        "capacity": "20",
+        "check_date": "2025-11-14",
+        "cuisine": "regional",
+        "name": "Western Tandoori & Naan House",
+        "smoking": "no",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3127024,
+          27.7152121
+        ]
+      },
+      "id": "node/3463824279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3467742501",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "चिनियाँ मी",
+        "name:en": "Chinese Mee",
+        "name:ne": "चिनियाँ मी"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3113905,
+          27.712816
+        ]
+      },
+      "id": "node/3467742501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3477018027",
+        "air_conditioning": "no",
+        "amenity": "restaurant",
+        "cuisine": "breakfast;american;international;local;pancake;asian",
+        "diet:vegan": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "Places",
+        "name:en": "Places Restaurant & Bar",
+        "opening_hours": "Mo-Su 09:00-23:00",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3092401,
+          27.7157317
+        ]
+      },
+      "id": "node/3477018027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3560223529",
+        "amenity": "restaurant",
+        "capacity": "20",
+        "cuisine": "Newari_Food",
+        "name": "चटामरि छें  ",
+        "name:en": "Chatamari Chhen",
+        "name:ne": "चटामरि छें  ",
+        "smoking": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3123975,
+          27.7184488
+        ]
+      },
+      "id": "node/3560223529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3751765601",
+        "addr:city": "Kathmandu",
+        "amenity": "restaurant",
+        "capacity": "200",
+        "cuisine": "Continental,",
+        "name": "रीफ रेस्टुरेन्ट र लाउन्ज बार",
+        "name:en": "Reef Restaurant and Lounge Bar",
+        "name:ne": "रीफ रेस्टुरेन्ट र लाउन्ज बार",
+        "opening_hours": "8:00-24:00",
+        "smoking": "separated",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3119445,
+          27.7165675
+        ]
+      },
+      "id": "node/3751765601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3856047839",
+        "amenity": "restaurant",
+        "cuisine": "ice_cream",
+        "delivery": "no",
+        "name": "Cookie Walla",
+        "note": "Crushed cookies. Ice cream. Cake. Bananas. Chocolate syrup. Condensed milk. All-in-one-boner-inducing super dessert. For about $2.",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.310248,
+          27.7161358
+        ]
+      },
+      "id": "node/3856047839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4294385095",
+        "addr:street": "Chaksibari Marg",
+        "amenity": "restaurant",
+        "cuisine": "american;hot_dog;italian",
+        "name": "Crazy burger",
+        "opening_hours": "Mo-Su 10:00-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3105057,
+          27.7158434
+        ]
+      },
+      "id": "node/4294385095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4387030502",
+        "addr:street": "J.P. School Road",
+        "amenity": "restaurant",
+        "cuisine": "steak_house;pasta;coffee_shop",
+        "diet:vegetarian": "yes",
+        "email": "kathmandusteakhouse@gmail.com",
+        "internet_access": "wlan",
+        "name": "Kathmandu Steak House Restaurant",
+        "name:de": "Kathmandu Steak House",
+        "opening_hours": "Mo-Su 12:10-22:00",
+        "operator": "Sudip Bhatta",
+        "phone": "+977 1 4264946",
+        "source": "C2M2 Kathmandu Field Survey 2021",
+        "website": "https://www.kathmandusteakhouse.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3103045,
+          27.713667
+        ]
+      },
+      "id": "node/4387030502"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4388734393",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "internet_access": "wlan",
+        "name": "Hankook Sarang Korean Restaurant",
+        "operator": "Chijman Gurung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3099637,
+          27.7136921
+        ]
+      },
+      "id": "node/4388734393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4400954924",
+        "amenity": "restaurant",
+        "cuisine": "coffee_shop;international;pizza",
+        "name": "Roadhouse Cafe / Hotel Roadhouse",
+        "tourism": "hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3103191,
+          27.7144185
+        ]
+      },
+      "id": "node/4400954924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4411398993",
+        "amenity": "restaurant",
+        "cuisine": "italian_pizza;local;chinese",
+        "internet_access": "wlan",
+        "name": "Green Organic Café"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3100898,
+          27.7145392
+        ]
+      },
+      "id": "node/4411398993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4445661491",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "दुध सागर",
+        "name:en": "Dudh Sagar",
+        "name:ne": "दुध सागर"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3145817,
+          27.7093369
+        ]
+      },
+      "id": "node/4445661491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4475269892",
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "internet_access": "wlan",
+        "name": "के-टू बियर र स्टेकहाउस",
+        "name:en": "K-Too Beer & Steakhouse",
+        "name:ne": "के-टू बियर र स्टेकहाउस",
+        "website": "http://kilroygroup.com/k-too/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3108733,
+          27.7147322
+        ]
+      },
+      "id": "node/4475269892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4582838789",
+        "addr:postcode": "44600",
+        "addr:street": "Thamel Marg",
+        "amenity": "restaurant",
+        "cuisine": "chinese;noodles;breakfast;chicken;curry;sausage;local",
+        "name": "Gilingche Tibetan Restaurant",
+        "opening_hours": "Mo-Su 08:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3114353,
+          27.7153782
+        ]
+      },
+      "id": "node/4582838789"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4697330389",
+        "addr:postcode": "44600",
+        "addr:street": "JP Marg",
+        "amenity": "restaurant",
+        "cuisine": "burger;sandwich;ice_cream;cake;coffee_shop;asian;pasta;noodles;pancake;spanish;chicken;indian;curry;thai;fish;breakfast;tea;sausage;local;american;italian",
+        "email": "westernkitchenktm@gmail.com",
+        "internet_access": "wlan",
+        "name": "वेस्टर्न किचेन",
+        "name:en": "Western Kitchen",
+        "name:ne": "वेस्टर्न किचेन",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "phone": "+977-1-4253529",
+        "website": "http://www.westernkitchennepal.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.309009,
+          27.7114486
+        ]
+      },
+      "id": "node/4697330389"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4767236866",
+        "addr:street": "Durbar Marg",
+        "amenity": "restaurant",
+        "cuisine": "chinese;regional;indian;thai",
+        "email": "royalostrichrestaurant@gmail.com",
+        "internet_access": "wlan",
+        "name": "रोयल अस्ट्रिच थाई",
+        "name:en": "Royal Ostrich Thai",
+        "name:ne": "रोयल अस्ट्रिच थाई",
+        "opening_hours": "Mo-Su 10:00-23:00",
+        "phone": "014220081",
+        "website": "http://www.royalostrichrestaurant.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3175022,
+          27.7125625
+        ]
+      },
+      "id": "node/4767236866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4802860621",
+        "amenity": "restaurant",
+        "cuisine": "german;hotdog;bavarian",
+        "name": "Shavi's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3106765,
+          27.7142786
+        ]
+      },
+      "id": "node/4802860621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4824705822",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Potala Restaurant",
+        "name:ne": "पोटाला रेस्टुरेन्ट",
+        "phone": "01-4253780"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3107833,
+          27.7130897
+        ]
+      },
+      "id": "node/4824705822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4861124321",
+        "amenity": "restaurant",
+        "cuisine": "tibetan;chinese;nepalese;indian",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "name": "Yangling Tibetan Restaurant",
+        "name:en": "Yangling Tibetan Restaurant",
+        "opening_hours": "Su-Fr 10:00-21:00",
+        "phone": "+97714257408"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3072515,
+          27.7159164
+        ]
+      },
+      "id": "node/4861124321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4893725424",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizza King",
+        "opening_hours": "24/7",
+        "phone": "4701154"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3104481,
+          27.7145616
+        ]
+      },
+      "id": "node/4893725424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4915476486",
+        "addr:city": "Kathmandu",
+        "addr:street": "Z Marg",
+        "amenity": "restaurant",
+        "capacity": "50",
+        "cuisine": "indian",
+        "delivery": "yes",
+        "indoor_seating": "yes",
+        "name": "Avataar Cafe",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3097859,
+          27.7169041
+        ]
+      },
+      "id": "node/4915476486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4922436094",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Nepal GO"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3119867,
+          27.7117184
+        ]
+      },
+      "id": "node/4922436094"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5131167921",
+        "amenity": "restaurant",
+        "cuisine": "burger;oriental;sandwich;international;friture;asian;coffee_shop;american;noodles;indian",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "name": "Phat Kath - bar & restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3106131,
+          27.7140639
+        ]
+      },
+      "id": "node/5131167921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5137072922",
+        "addr:street": "J.P. School Road",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "email": "yinyang@mos.com.np",
+        "internet_access": "wlan",
+        "name": "Yin Yang Restaurant",
+        "phone": "014701510",
+        "website": "https://www.yinyang.com.np/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3101589,
+          27.7145503
+        ]
+      },
+      "id": "node/5137072922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5288857021",
+        "addr:housenumber": "200/38",
+        "addr:street": "Thamel Marg",
+        "amenity": "restaurant",
+        "cuisine": "local",
+        "email": "newamomo@gmail.com",
+        "internet_access": "wlan",
+        "name": "नेवा मोमो रेस्टुरेन्ट",
+        "name:en": "Newa Momo Restaurant",
+        "name:ne": "नेवा मोमो रेस्टुरेन्ट",
+        "opening_hours": "Mo-Su 08:00-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3115202,
+          27.712056
+        ]
+      },
+      "id": "node/5288857021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5371707222",
+        "addr:postcode": "44600",
+        "amenity": "restaurant",
+        "capacity": "86",
+        "cuisine": "korean",
+        "email": "nepalgalbi@gmail.com",
+        "internet_access": "wlan",
+        "name": "Gangnam Galbi Barbeque",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "014434780",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://www.facebook.com/nepalgalbi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.321201,
+          27.7131468
+        ]
+      },
+      "id": "node/5371707222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5406466521",
+        "amenity": "restaurant",
+        "cuisine": "chinese;noodles;tea;local",
+        "diet:vegetarian": "yes",
+        "name": "Namaste Cafe",
+        "name:en": "Namaste Cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3084283,
+          27.7134796
+        ]
+      },
+      "id": "node/5406466521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5544129825",
+        "addr:street": "Jyatha Marga",
+        "amenity": "restaurant",
+        "cuisine": "local",
+        "internet_access": "wlan",
+        "name": "De Himalayan Aroma Restaurant",
+        "name:it": "De Himalayan Aroma Restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3143837,
+          27.7100409
+        ]
+      },
+      "id": "node/5544129825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5545531134",
+        "addr:postcode": "44600",
+        "addr:street": "Samakhusi Marg",
+        "amenity": "restaurant",
+        "cuisine": "italian_pizza",
+        "email": "bpnpizzahouse@gmail.com",
+        "internet_access": "wlan",
+        "name": "बी. पी. एन पिज्जा हाउस",
+        "name:en": "B.P.N Pizza House",
+        "name:ne": "बी. पी. एन पिज्जा हाउस",
+        "opening_hours": "Mo-Sa 10:00-22:00; Su 10:00-22:00",
+        "operator": "Badri Prasad Neupane",
+        "phone": "9869531333",
+        "website": "http://www.bpnpizzahouse.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3122135,
+          27.7187455
+        ]
+      },
+      "id": "node/5545531134"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5562442723",
+        "addr:street": "Narsingh Chowk",
+        "amenity": "restaurant",
+        "cuisine": "chicken;curry;oriental;grill;deli;breakfast;coffee_shop;local",
+        "diet:vegan": "yes",
+        "email": "goodtmiescafelounge@gmail.com",
+        "internet_access": "wlan",
+        "name": "शुभ समय",
+        "name:en": "Goodtimes",
+        "name:ne": "शुभ समय",
+        "name:ru": "Goodtime",
+        "opening_hours": "Mo-Su 08:00-24:00",
+        "phone": "+977 984 1958305"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.311801,
+          27.7143728
+        ]
+      },
+      "id": "node/5562442723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5964083685",
+        "amenity": "restaurant",
+        "check_date": "2024-10-01",
+        "cuisine": "regional",
+        "name": "Mukthinath Thakali Kitchen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3086516,
+          27.7127123
+        ]
+      },
+      "id": "node/5964083685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5965688287",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Bloicha Momo",
+        "phone": "9823745110"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3115161,
+          27.7135683
+        ]
+      },
+      "id": "node/5965688287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6046631088",
+        "amenity": "restaurant",
+        "cuisine": "indian;international;local",
+        "internet_access": "wlan",
+        "name": "Thamel cave kitchen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3118517,
+          27.7140209
+        ]
+      },
+      "id": "node/6046631088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6161418285",
+        "addr:postcode": "44600",
+        "addr:street": "J.P. Road",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "name": "Anatolia",
+        "phone": "+97714258757"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3096675,
+          27.7119628
+        ]
+      },
+      "id": "node/6161418285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6235703085",
+        "addr:street": "J.P. Road",
+        "amenity": "restaurant",
+        "cuisine": "burger;sandwich;international;cake;coffee_shop;asian;pasta;pancake;donut;pizza;chicken;diner;fish_and_chips;italian_pizza;indian;curry;breakfast;french;tea;american;italian",
+        "diet:vegan": "yes",
+        "email": "laughingbirdcafe@gmail.com",
+        "internet_access": "wlan",
+        "name": "Laughing Bird Cafe and Restaurant",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "phone": "+977 980 1070176"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3091544,
+          27.7116076
+        ]
+      },
+      "id": "node/6235703085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6487188985",
+        "amenity": "restaurant",
+        "cuisine": "indian;mexican;american",
+        "internet_access": "wlan",
+        "name": "Northfield Café and bar",
+        "opening_hours": "Mo-Su 07:30-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3099595,
+          27.7155256
+        ]
+      },
+      "id": "node/6487188985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6673476186",
+        "amenity": "restaurant",
+        "cuisine": "chicken;burger",
+        "name": "कुखुराको स्टेशन",
+        "name:en": "Chicken Station",
+        "name:ne": "कुखुराको स्टेशन"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3115426,
+          27.7144418
+        ]
+      },
+      "id": "node/6673476186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6822906885",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "internet_access": "wlan",
+        "name": "Furusato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3101544,
+          27.7138657
+        ]
+      },
+      "id": "node/6822906885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6869638485",
+        "addr:street": "Mandala street",
+        "amenity": "restaurant",
+        "cuisine": "pizza;tea;italian_pizza;coffee_shop",
+        "name": "भेरो पिज्जा",
+        "name:en": "Vero pizza",
+        "name:es": "Vero pizza",
+        "name:ne": "भेरो पिज्जा",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "phone": "+977 98 23 84 68 21"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3108452,
+          27.7148783
+        ]
+      },
+      "id": "node/6869638485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6869638487",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "email": "migyurlama29@gmail.com",
+        "internet_access": "wlan",
+        "name": "Tibetan and Nepali Kitchen",
+        "name:es": "Tibetan and Nepali Kitchen",
+        "opening_hours": "Mo-Su 09:00-23:00",
+        "operator": "Migyur Lama",
+        "phone": "977-014701303"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3102093,
+          27.7147876
+        ]
+      },
+      "id": "node/6869638487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6942571196",
+        "addr:city": "Thamel",
+        "addr:postcode": "44600",
+        "addr:street": "Bhagawatisthan Thamel",
+        "amenity": "restaurant",
+        "cuisine": "local;indian;multi_cusine",
+        "diet:chicken": "yes",
+        "diet:fish": "yes",
+        "diet:healthy": "yes",
+        "diet:local": "yes",
+        "diet:non-vegetarian": "yes",
+        "diet:vegetarian": "yes",
+        "name": "The Best Kathmandu Kitchen",
+        "opening_hours": "Mo-Su 09:00-22:30",
+        "phone": "+977 -01- 4513355",
+        "website": "https://tkathmandukitchen.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.31151,
+          27.7152416
+        ]
+      },
+      "id": "node/6942571196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6984580886",
+        "amenity": "restaurant",
+        "cuisine": "international;italian;mexican",
+        "name": "Roadhouse Cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3103073,
+          27.7144428
+        ]
+      },
+      "id": "node/6984580886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7001390285",
+        "addr:postcode": "44600",
+        "addr:street": "Chaksibari Marg",
+        "amenity": "restaurant",
+        "cuisine": "breakfast;pancake;french;savory_pancakes",
+        "internet_access": "wlan",
+        "name": "French Creperie & Bar",
+        "name:fr": "French crêperie & bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3101048,
+          27.715359
+        ]
+      },
+      "id": "node/7001390285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7146490785",
+        "addr:postcode": "44600",
+        "addr:street": "Dabali Marga",
+        "amenity": "restaurant",
+        "cuisine": "chinese;tea;noodles;asian;coffee_shop;curry;indian",
+        "diet:vegetarian": "yes",
+        "email": "sunilshrestha001122@gmail.com",
+        "name": "Om Shree Food Center",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "phone": "+977 984 3741051"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3122887,
+          27.7149382
+        ]
+      },
+      "id": "node/7146490785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7148663085",
+        "addr:housenumber": "562oyo",
+        "addr:postcode": "44600",
+        "addr:street": "Dabali Marga",
+        "amenity": "restaurant",
+        "cuisine": "chinese;tea;chicken;diner;noodles;coffee_shop;curry;indian;local",
+        "diet:vegetarian": "yes",
+        "email": "sunilshrestha001122@gmail.com",
+        "name": "ओम श्री खाद्य केन्द्र",
+        "name:en": "Om Shree Food Center",
+        "name:ne": "ओम श्री खाद्य केन्द्र",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "phone": "+977 984 3741051"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3120822,
+          27.7150868
+        ]
+      },
+      "id": "node/7148663085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8401530596",
+        "addr:city": "Thamel",
+        "addr:postcode": "44600",
+        "addr:street": "Saat Ghumti Marg",
+        "amenity": "restaurant",
+        "cuisine": "regional;international",
+        "name": "घाँसकोट क्याफे र बार",
+        "name:en": "Grasshopper Cafe and Bar",
+        "name:ne": "घाँसकोट क्याफे र बार",
+        "phone": "9841225722"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3095509,
+          27.715808
+        ]
+      },
+      "id": "node/8401530596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9662688967",
+        "addr:city": "Kathmandu",
+        "addr:postcode": "44600",
+        "addr:street": "Chaksibari Marg",
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "bar": "yes",
+        "brewery": "barasingha",
+        "capacity": "100",
+        "contact:facebook": "https://www.facebook.com/czechpubnepal",
+        "cuisine": "regional;czech",
+        "diet:gluten_free": "yes",
+        "diet:vegetarian": "yes",
+        "email": "info@czechpubnepal.com",
+        "highchair": "yes",
+        "internet_access": "wlan",
+        "name": "Czech Pub",
+        "opening_hours": "Mo-Su 12:00-00:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "phone": "+977 985-1056107"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3102239,
+          27.7172681
+        ]
+      },
+      "id": "node/9662688967"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10252895009",
+        "addr:street": "Saat Ghumti Marg",
+        "amenity": "restaurant",
+        "cuisine": "local",
+        "internet_access": "wlan",
+        "name": "स्थानीय रेस्ट्रो र बार",
+        "name:en": "The Local Restro and Bar",
+        "name:ne": "स्थानीय रेस्ट्रो र बार",
+        "opening_hours": "Su-Sa 11:00-22:00",
+        "phone": "+977 9813415777"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3095667,
+          27.7158095
+        ]
+      },
+      "id": "node/10252895009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11052361905",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "internet_access": "wlan",
+        "name": "Swarg Pure Vegetarian Restaurant",
+        "name:ko": "대장금,  Daejangkeum (한식)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3109301,
+          27.714755
+        ]
+      },
+      "id": "node/11052361905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11361373924",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "The sushi bar",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.313378,
+          27.7154832
+        ]
+      },
+      "id": "node/11361373924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12328192832",
+        "addr:city": "Thamel",
+        "addr:postcode": "44600",
+        "addr:street": "bhagawatisthan thamel",
+        "amenity": "restaurant",
+        "cuisine": "multi_cusine;local;indian;nepalese",
+        "diet:chicken": "yes",
+        "diet:fish": "yes",
+        "diet:healthy": "yes",
+        "diet:local": "yes",
+        "diet:meat": "yes",
+        "diet:non-halal": "yes",
+        "diet:non-vegetarian": "yes",
+        "diet:organic": "yes",
+        "diet:vegetarian": "yes",
+        "name": "The Best kathmandu Kitchen",
+        "opening_hours": "Mo-Su 09:00-21:30",
+        "phone": "+977-01-4513355",
+        "website": "https://tkathmandukitchen.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3115029,
+          27.7156572
+        ]
+      },
+      "id": "node/12328192832"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466931701",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Lumbini Tandoori & Naan House",
+        "opening_hours": "Mo-Su 09:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3121609,
+          27.7117298
+        ]
+      },
+      "id": "node/12466931701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13272278701",
+        "amenity": "restaurant",
+        "cuisine": "italian_pizza",
+        "name": "Bella Luna",
+        "opening_hours": "Mo-Th 12:00-22:30; Fr-Sa 12:00-23:00; Su 12:00-22:30",
+        "phone": "+9779761857403"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3109278,
+          27.715164
+        ]
+      },
+      "id": "node/13272278701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13273455601",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Pho 99 Thamel",
+        "phone": "+9779709090400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3101447,
+          27.7136185
+        ]
+      },
+      "id": "node/13273455601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13350695532",
+        "addr:city": "Kathmandu",
+        "addr:postcode": "44600",
+        "addr:street": "Chaksibari Marg",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=61583492104446",
+        "cuisine": "burger",
+        "name": "Ron's Handburger Nepal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3102261,
+          27.7133587
+        ]
+      },
+      "id": "node/13350695532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13887145300",
+        "addr:city": "Kathmandu",
+        "addr:postcode": "44600",
+        "addr:street": "Swayambhu Marg",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/lunchwaynepal",
+        "cuisine": "momo;laphing;keema_noodles;burger;chowmein;sandwich;black_tea;breakfast;coffee_shop;nepalese",
+        "email": "lunchwaynepal@gmail.com",
+        "name": "Lunchway",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "phone": "+977 9749499887"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3032182,
+          27.7139221
+        ]
+      },
+      "id": "node/13887145300"
+    }
+  ]
+}
