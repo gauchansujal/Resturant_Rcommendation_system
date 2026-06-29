@@ -8,159 +8,119 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --red:#E8431A; --red2:#C13510;
-  --bg:#FDF6EE; --ink:#1A1209; --muted:#7A6A58;
-  --border:#E8DDD2; --card:#ffffff; --hdr:#1A1209;
-}
-.dark{
-  --bg:#141010; --ink:#F0E8DF; --muted:#A0907E;
-  --border:#2A2220; --card:#1E1A18; --hdr:#0E0B0A;
-}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);height:100vh;overflow:hidden;display:flex;flex-direction:column;transition:background .25s,color .25s;}
-/* HEADER */
-header{height:58px;background:var(--hdr);display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0;}
+body{font-family:'Inter',sans-serif;background:#FDF6EE;color:#1A1209;height:100vh;overflow:hidden;display:flex;flex-direction:column;}
+header{height:56px;background:#1A1209;display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0;}
 .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;white-space:nowrap;}
-.logo b{color:var(--red);}
+.logo b{color:#E8431A;}
 .sw{flex:1;max-width:380px;position:relative;}
 .sw input{width:100%;padding:8px 12px 8px 34px;border:none;border-radius:7px;background:rgba(255,255,255,.13);color:#fff;font-size:.83rem;outline:none;}
 .sw input::placeholder{color:rgba(255,255,255,.4);}
-.sw input:focus{background:rgba(255,255,255,.2);}
 .si{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.45);pointer-events:none;}
 .hr{margin-left:auto;display:flex;align-items:center;gap:7px;}
-.badge{background:var(--red);color:#fff;font-family:'Sora',sans-serif;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;}
+.badge{background:#E8431A;color:#fff;font-family:'Sora',sans-serif;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;}
 .ib{background:rgba(255,255,255,.13);border:none;color:#fff;width:32px;height:32px;border-radius:7px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
 .ib:hover{background:rgba(255,255,255,.23);}
-/* BODY */
 .main{display:flex;flex:1;overflow:hidden;}
-/* SIDEBAR */
-.sb{width:285px;background:var(--bg);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;transition:background .25s;}
-.flt{padding:12px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:9px;}
-.lbl{font-family:'Sora',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
-select{width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:7px;background:var(--card);color:var(--ink);font-size:.8rem;font-family:'Inter',sans-serif;cursor:pointer;outline:none;}
-select:focus{border-color:var(--red);}
-.srow{display:flex;align-items:center;gap:8px;}
-input[type=range]{flex:1;accent-color:var(--red);cursor:pointer;height:4px;}
-.sv{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;color:var(--red);min-width:34px;}
+.sb{width:285px;background:#FDF6EE;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
+.flt{padding:12px;border-bottom:1px solid #E8DDD2;display:flex;flex-direction:column;gap:10px;}
+.lbl{font-family:'Sora',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A6A58;margin-bottom:2px;}
+select{width:100%;padding:7px 8px;border:1px solid #E8DDD2;border-radius:7px;background:#fff;color:#1A1209;font-size:.82rem;font-family:'Inter',sans-serif;cursor:pointer;outline:none;}
+.srow{display:flex;align-items:center;gap:10px;}
+input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
+.sv{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:#E8431A;min-width:36px;}
 .chips{display:flex;flex-wrap:wrap;gap:5px;}
-.chip{padding:4px 10px;border-radius:20px;border:1px solid var(--border);background:var(--card);font-size:.7rem;cursor:pointer;user-select:none;color:var(--muted);transition:all .15s;}
-.chip.on{background:var(--red);border-color:var(--red);color:#fff;}
-/* TABS */
-.tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0;}
-.tab{flex:1;padding:8px 4px;text-align:center;font-size:.68rem;font-family:'Sora',sans-serif;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;}
-.tab.on{color:var(--red);border-bottom-color:var(--red);}
-/* CARD LIST */
-.lst{flex:1;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:6px;}
+.chip{padding:4px 11px;border-radius:20px;border:1px solid #E8DDD2;background:#fff;font-size:.71rem;cursor:pointer;user-select:none;color:#7A6A58;}
+.chip.on{background:#E8431A;border-color:#E8431A;color:#fff;}
+.tabs{display:flex;border-bottom:1px solid #E8DDD2;flex-shrink:0;background:#FDF6EE;}
+.tab{flex:1;padding:9px 4px;text-align:center;font-size:.69rem;font-family:'Sora',sans-serif;font-weight:700;cursor:pointer;color:#7A6A58;border-bottom:2px solid transparent;}
+.tab.on{color:#E8431A;border-bottom-color:#E8431A;}
+.lst{flex:1;overflow-y:auto;padding:8px;background:#FDF6EE;}
 .lst::-webkit-scrollbar{width:3px;}
-.lst::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
-/* CARD */
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-left .15s,box-shadow .15s;border-left:3px solid transparent;}
-.card:hover{border-left-color:var(--red);box-shadow:0 2px 8px rgba(0,0,0,.09);}
-.card.sel{border-left-color:var(--red);}
-.cimg{width:100%;height:95px;object-fit:cover;display:block;}
-.cbd{padding:9px 10px;background:var(--card);}
-.cn{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:var(--ink);margin-bottom:4px;line-height:1.3;}
-.cm{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.cst{color:#F59E0B;font-size:.7rem;}
-.crn{font-weight:700;font-size:.74rem;color:var(--ink);}
-.ctg{background:#F3EDE7;color:var(--muted);font-size:.63rem;padding:2px 7px;border-radius:10px;}
-.dark .ctg{background:#2A2220;}
-.cam{display:flex;gap:3px;margin-top:4px;}
-.cam span{font-size:.65rem;background:#F3EDE7;padding:2px 5px;border-radius:5px;color:var(--muted);}
-.dark .cam span{background:#2A2220;}
-.crv{font-size:.65rem;color:var(--muted);margin-top:2px;}
-.empty{text-align:center;padding:36px 14px;color:var(--muted);font-size:.8rem;line-height:1.6;}
-/* MAP */
+.lst::-webkit-scrollbar-thumb{background:#E8DDD2;border-radius:3px;}
+.card{background:#fff;border:1px solid #E8DDD2;border-left:3px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;margin-bottom:7px;}
+.card:hover{border-left-color:#E8431A;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.card.sel{border-left-color:#E8431A;}
+.cimg{width:100%;height:90px;object-fit:cover;display:block;background:#F3EDE7;}
+.cbd{padding:10px 11px;background:#fff;}
+.cn{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:#1A1209;margin-bottom:5px;line-height:1.3;}
+.cmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px;}
+.cst{color:#F59E0B;font-size:.72rem;}
+.crn{font-weight:700;font-size:.76rem;color:#1A1209;}
+.ctg{background:#F3EDE7;color:#7A6A58;font-size:.64rem;padding:2px 7px;border-radius:10px;}
+.cam{font-size:.68rem;color:#7A6A58;margin-top:3px;}
+.crv{font-size:.66rem;color:#7A6A58;}
 #map{flex:1;z-index:1;}
-/* DETAIL PANEL */
-.dp{position:fixed;right:0;top:58px;bottom:0;width:345px;background:var(--card);border-left:1px solid var(--border);z-index:500;transform:translateX(110%);transition:transform .28s;display:flex;flex-direction:column;overflow:hidden;}
+.dp{position:fixed;right:0;top:56px;bottom:0;width:340px;background:#fff;border-left:1px solid #E8DDD2;z-index:500;transform:translateX(110%);transition:transform .28s;display:flex;flex-direction:column;}
 .dp.open{transform:translateX(0);}
-.dph{padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--card);}
-.dpt{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:var(--ink);}
-.xcb{background:none;border:none;font-size:1rem;cursor:pointer;color:var(--muted);padding:3px 6px;border-radius:5px;}
-.xcb:hover{background:var(--border);}
-.dpb{flex:1;overflow-y:auto;padding:13px;}
-.dpi{width:100%;height:155px;object-fit:cover;border-radius:9px;margin-bottom:11px;display:block;background:var(--border);}
-.dpr{display:flex;align-items:center;gap:7px;margin-bottom:9px;}
+.dph{padding:12px 14px;border-bottom:1px solid #E8DDD2;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.dpt{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#1A1209;}
+.xcb{background:none;border:none;font-size:1rem;cursor:pointer;color:#7A6A58;padding:3px 6px;border-radius:5px;}
+.dpb{flex:1;overflow-y:auto;padding:14px;}
+.dpi{width:100%;height:155px;object-fit:cover;border-radius:9px;margin-bottom:12px;display:block;background:#F3EDE7;}
+.dpr{display:flex;align-items:center;gap:7px;margin-bottom:10px;}
 .dps{color:#F59E0B;font-size:.95rem;}
-.dpn{font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink);}
+.dpn{font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:#1A1209;}
 .dptg{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
-.ptg{background:#F3EDE7;color:var(--muted);font-size:.66rem;padding:2px 8px;border-radius:10px;}
-.dark .ptg{background:#2A2220;}
-.dpi2{display:flex;flex-direction:column;gap:5px;margin-bottom:11px;}
-.ir{display:flex;gap:7px;font-size:.76rem;color:var(--muted);}
-.ir strong{color:var(--ink);}
-.wl{display:inline-block;color:var(--red);font-size:.74rem;font-weight:700;text-decoration:none;margin-bottom:13px;}
-/* REVIEW */
-.rsec{border-top:1px solid var(--border);padding-top:11px;margin-top:2px;}
-.rtl{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:9px;}
-.rf{display:flex;flex-direction:column;gap:7px;margin-bottom:13px;}
-.rf input,.rf textarea{width:100%;padding:7px 9px;border:1px solid var(--border);border-radius:7px;background:var(--bg);color:var(--ink);font-size:.78rem;font-family:'Inter',sans-serif;outline:none;resize:vertical;}
-.rf input:focus,.rf textarea:focus{border-color:var(--red);}
+.ptg{background:#F3EDE7;color:#7A6A58;font-size:.67rem;padding:2px 8px;border-radius:10px;}
+.dpinfo{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+.ir{display:flex;gap:7px;font-size:.77rem;color:#7A6A58;}
+.wl{display:inline-block;color:#E8431A;font-size:.75rem;font-weight:700;text-decoration:none;margin-bottom:14px;}
+.rsec{border-top:1px solid #E8DDD2;padding-top:12px;}
+.rtl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:#1A1209;margin-bottom:9px;}
+.rf{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.rf input,.rf textarea{width:100%;padding:7px 9px;border:1px solid #E8DDD2;border-radius:7px;background:#FDF6EE;color:#1A1209;font-size:.79rem;font-family:'Inter',sans-serif;outline:none;resize:vertical;}
+.rf input:focus,.rf textarea:focus{border-color:#E8431A;}
 .spk{display:flex;gap:5px;}
-.spk span{font-size:1.3rem;cursor:pointer;color:#D1C5B8;transition:color .1s;}
+.spk span{font-size:1.3rem;cursor:pointer;color:#D1C5B8;}
 .spk span.lit{color:#F59E0B;}
-.rbtn{background:var(--red);color:#fff;border:none;padding:8px 15px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;cursor:pointer;}
-.rbtn:hover{background:var(--red2);}
+.rbtn{background:#E8431A;color:#fff;border:none;padding:8px 15px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.79rem;cursor:pointer;}
 .rl{display:flex;flex-direction:column;gap:7px;}
-.ri{background:var(--bg);border-radius:7px;padding:8px;}
+.ri{background:#FDF6EE;border-radius:7px;padding:9px;}
 .rim{display:flex;align-items:center;gap:6px;margin-bottom:3px;}
-.riname{font-weight:700;font-size:.76rem;color:var(--ink);}
-.rist{color:#F59E0B;font-size:.7rem;}
-.ridt{color:var(--muted);font-size:.67rem;margin-left:auto;}
-.ritx{font-size:.76rem;color:var(--muted);line-height:1.5;}
-.norv{color:var(--muted);font-size:.76rem;font-style:italic;}
-/* ANALYTICS */
-.ap{position:fixed;left:285px;right:0;top:58px;bottom:0;background:var(--bg);z-index:400;overflow-y:auto;padding:16px;display:none;transition:background .25s;}
+.riname{font-weight:700;font-size:.77rem;color:#1A1209;}
+.rist{color:#F59E0B;font-size:.71rem;}
+.ridt{color:#7A6A58;font-size:.67rem;margin-left:auto;}
+.ritx{font-size:.77rem;color:#7A6A58;line-height:1.5;}
+.norv{color:#7A6A58;font-size:.77rem;font-style:italic;}
+.ap{position:fixed;left:285px;right:0;top:56px;bottom:0;background:#FDF6EE;z-index:400;overflow-y:auto;padding:16px;display:none;}
 .ap.open{display:block;}
 .agd{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:18px;}
-.ast{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:13px;text-align:center;}
-.asn{font-family:'Sora',sans-serif;font-weight:700;font-size:1.5rem;color:var(--red);}
-.asl{font-size:.7rem;color:var(--muted);margin-top:3px;}
-.asc{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:13px;margin-bottom:10px;}
-.atl{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:9px;}
+.ast{background:#fff;border:1px solid #E8DDD2;border-radius:9px;padding:13px;text-align:center;}
+.asn{font-family:'Sora',sans-serif;font-weight:700;font-size:1.5rem;color:#E8431A;}
+.asl{font-size:.7rem;color:#7A6A58;margin-top:3px;}
+.asc{background:#fff;border:1px solid #E8DDD2;border-radius:9px;padding:13px;margin-bottom:10px;}
+.atl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:#1A1209;margin-bottom:9px;}
 .br{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
-.brl{font-size:.71rem;width:105px;flex-shrink:0;color:var(--ink);}
-.bt{flex:1;background:var(--border);border-radius:4px;height:7px;overflow:hidden;}
-.bf{height:100%;background:var(--red);border-radius:4px;}
-.bv{font-size:.69rem;color:var(--muted);min-width:18px;text-align:right;}
+.brl{font-size:.72rem;width:110px;flex-shrink:0;color:#1A1209;}
+.bt{flex:1;background:#E8DDD2;border-radius:4px;height:7px;overflow:hidden;}
+.bf{height:100%;background:#E8431A;border-radius:4px;}
+.bv{font-size:.69rem;color:#7A6A58;min-width:20px;text-align:right;}
 .tl{display:flex;flex-direction:column;gap:6px;}
 .ti{display:flex;align-items:center;gap:7px;}
-.trk{font-family:'Sora',sans-serif;font-weight:700;font-size:.76rem;color:var(--red);width:18px;}
-.tn{font-size:.79rem;flex:1;color:var(--ink);}
-.tr{font-family:'Sora',sans-serif;font-weight:700;font-size:.79rem;color:#F59E0B;}
-/* LOADING */
-#ld{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;font-family:'Sora',sans-serif;font-size:.9rem;color:var(--muted);gap:10px;}
-.sp{width:18px;height:18px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:rot .7s linear infinite;}
+.trk{font-family:'Sora',sans-serif;font-weight:700;font-size:.77rem;color:#E8431A;width:20px;}
+.tn{font-size:.8rem;flex:1;color:#1A1209;}
+.tr{font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;color:#F59E0B;}
+#ld{position:fixed;inset:0;background:#FDF6EE;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:'Sora',sans-serif;font-size:.9rem;color:#7A6A58;gap:10px;}
+.sp{width:18px;height:18px;border:3px solid #E8DDD2;border-top-color:#E8431A;border-radius:50%;animation:rot .7s linear infinite;}
 @keyframes rot{to{transform:rotate(360deg);}}
-/* TOAST */
 #tst{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(70px);background:#1A1209;color:#fff;padding:8px 16px;border-radius:7px;font-size:.78rem;z-index:9998;transition:transform .25s;pointer-events:none;}
 #tst.show{transform:translateX(-50%) translateY(0);}
+.empty{text-align:center;padding:40px 16px;color:#7A6A58;font-size:.82rem;line-height:1.8;}
 </style>
 </head>
 <body>
-<script>
-// Reset slider IMMEDIATELY before any render — overrides browser form memory
-window.addEventListener("DOMContentLoaded", function() {
-  // Also ensure light mode on fresh load
-  document.body.classList.remove("dark");
-  var s = document.getElementById("rsl");
-  if(s){ s.value = 0; }
-  var v = document.getElementById("rsv");
-  if(v){ v.textContent = "Any"; }
-});
-</script>
 <div id="ld"><div class="sp"></div>Loading restaurants…</div>
 <div id="tst"></div>
 
 <header>
   <div class="logo">Thamel <b>Eats</b></div>
-  <div class="sw"><span class="si">🔍</span><input type="text" id="srch" placeholder="Search restaurant or street…" autocomplete="off"/></div>
+  <div class="sw"><span class="si">🔍</span>
+    <input type="text" id="srch" placeholder="Search restaurant or street…" autocomplete="off"/>
+  </div>
   <div class="hr">
     <div class="badge" id="cnt">0 places</div>
-    <button class="ib" id="abtn" title="Analytics">📊</button>
-    <button class="ib" id="tbtn" title="Dark mode">🌙</button>
+    <button class="ib" id="abtn">📊</button>
   </div>
 </header>
 
@@ -174,7 +134,7 @@ window.addEventListener("DOMContentLoaded", function() {
       <div>
         <div class="lbl">Minimum Rating</div>
         <div class="srow">
-          <input type="range" id="rsl" min="0" max="5" step="0.5" value="0" autocomplete="off"/>
+          <input type="range" id="rsl" min="3" max="5" step="0.1" value="3" autocomplete="off"/>
           <span class="sv" id="rsv">Any</span>
         </div>
       </div>
@@ -196,7 +156,6 @@ window.addEventListener("DOMContentLoaded", function() {
   <div id="map"></div>
 </div>
 
-<!-- DETAIL PANEL -->
 <div class="dp" id="dp">
   <div class="dph">
     <div class="dpt" id="dpt">Restaurant</div>
@@ -205,44 +164,29 @@ window.addEventListener("DOMContentLoaded", function() {
   <div class="dpb" id="dpb"></div>
 </div>
 
-<!-- ANALYTICS -->
 <div class="ap" id="ap">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-    <h2 style="font-family:'Sora',sans-serif;font-size:1rem;color:var(--ink);">📊 Analytics</h2>
-    <button class="xcb" onclick="closeAP()">✕ Close</button>
+    <h2 style="font-family:'Sora',sans-serif;font-size:1rem;color:#1A1209;">📊 Analytics</h2>
+    <button class="xcb" onclick="document.getElementById('ap').classList.remove('open')">✕ Close</button>
   </div>
   <div id="apc">Loading…</div>
 </div>
 
 <script>
-const FALLBACK = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80";
-let DATA = [], MKRS = {}, AID = null, MAP, TAB = "list", SRAT = 0;
-const F = {search:"",cuisine:"all",minRating:0,wifi:false,vegetarian:false,outdoor:false};
+const FB = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80";
+let DATA=[], MKRS={}, AID=null, MAP, TAB="list", SRAT=0;
+// minRating starts at 3.0 (lowest in our data) = show all
+const F = {search:"",cuisine:"all",minRating:3.0,wifi:false,vegetarian:false,outdoor:false};
 
-// safe element id from restaurant id
 function sid(id){ return "c"+String(id).replace(/\W/g,"_"); }
-
-// stars
-function st(r){const f=Math.floor(r),h=r%1>=.5?1:0,e=5-f-h;return "★".repeat(f)+(h?"½":"")+"☆".repeat(e);}
-
-// toast
+function stars(r){const f=Math.floor(r),h=r%1>=.5?1:0;return "★".repeat(f)+(h?"½":"")+"☆".repeat(5-f-h);}
 function toast(m){const t=document.getElementById("tst");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500);}
-
-// DARK MODE
-let DARK=false;
-document.getElementById("tbtn").onclick=()=>{
-  DARK=!DARK;
-  document.body.classList.toggle("dark",DARK);
-  document.getElementById("tbtn").textContent=DARK?"☀️":"🌙";
-  if(MAP)MAP.invalidateSize();
-};
 
 // MAP
 function initMap(){
-  MAP=L.map("map",{zoomControl:true}).setView([27.7153,85.3123],15);
+  MAP=L.map("map").setView([27.7153,85.3123],15);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-    attribution:'© <a href="https://openstreetmap.org">OSM</a>',maxZoom:19
-  }).addTo(MAP);
+    attribution:'© OpenStreetMap',maxZoom:19}).addTo(MAP);
 }
 
 function mkIcon(hl){
@@ -255,16 +199,16 @@ function setMarkers(list){
   Object.values(MKRS).forEach(m=>MAP.removeLayer(m));
   MKRS={};
   list.forEach(r=>{
-    const photo=r.photo||FALLBACK;
+    const photo=r.photo||FB;
     const rating=r.user_rating||r.rating||0;
-    const eid=r.id.replace(/\\/g,"\\\\").replace(/'/g,"\\'");
-    const m=L.marker([r.latitude,r.longitude],{icon:mkIcon(false)})
-      .addTo(MAP)
-      .bindPopup(`<div style="font-family:'Inter',sans-serif;min-width:185px;">
-        <img src="${photo}" onerror="this.src='${FALLBACK}'" style="width:100%;height:88px;object-fit:cover;border-radius:7px;margin-bottom:7px;display:block;"/>
+    const eid=r.id.replace(/'/g,"\\'");
+    const m=L.marker([r.latitude,r.longitude],{icon:mkIcon(false)}).addTo(MAP)
+      .bindPopup(`<div style="font-family:'Inter',sans-serif;min-width:180px;">
+        <img src="${photo}" onerror="this.src='${FB}'" style="width:100%;height:85px;object-fit:cover;border-radius:7px;margin-bottom:7px;display:block;"/>
         <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:#1A1209;margin-bottom:3px;">${r.name}</div>
-        <div style="color:#F59E0B;font-size:.76rem;margin-bottom:6px;">${st(rating)} <strong style="color:#1A1209">${rating}</strong></div>
-        <button onclick="openDP('${eid}');MAP&&MAP.closePopup();" style="background:#E8431A;color:#fff;border:none;padding:5px 11px;border-radius:6px;font-size:.71rem;cursor:pointer;font-weight:700;font-family:'Sora',sans-serif;">View Details →</button>
+        <div style="color:#F59E0B;font-size:.76rem;margin-bottom:6px;">${stars(rating)} <strong style="color:#1A1209">${rating}</strong></div>
+        <div style="font-size:.72rem;color:#7A6A58;margin-bottom:7px;">${r.primary_cuisine||""}</div>
+        <button onclick="openDP('${eid}');MAP.closePopup();" style="background:#E8431A;color:#fff;border:none;padding:5px 11px;border-radius:6px;font-size:.71rem;cursor:pointer;font-weight:700;">View Details →</button>
       </div>`,{maxWidth:230});
     m.on("click",()=>hlCard(r.id));
     MKRS[sid(r.id)]=m;
@@ -277,25 +221,25 @@ function renderCards(list){
   let sorted=[...list];
   if(TAB==="top") sorted.sort((a,b)=>(b.user_rating||b.rating)-(a.user_rating||a.rating));
   if(!sorted.length){
-    area.innerHTML=`<div class="empty">🍽️<br><br>No restaurants match.<br><small>Lower the rating slider or remove filters.</small></div>`;
+    area.innerHTML=`<div class="empty">🍽️<br><br>No restaurants match.<br><small>Try lowering the minimum rating slider.</small></div>`;
     return;
   }
   area.innerHTML=sorted.map(r=>{
-    const photo=r.photo||FALLBACK;
+    const photo=r.photo||FB;
     const rating=r.user_rating||r.rating||0;
-    const eid=r.id.replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+    const eid=r.id.replace(/'/g,"\\'");
     const amen=[r.wifi?"📶":"",r.vegetarian?"🌿":"",r.outdoor_seating?"🌳":""].filter(Boolean).join(" ");
     return `<div class="card" id="${sid(r.id)}" onclick="openDP('${eid}')">
-      <img class="cimg" src="${photo}" alt="${r.name}" loading="lazy" onerror="this.src='${FALLBACK}'"/>
+      <img class="cimg" src="${photo}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'"/>
       <div class="cbd">
         <div class="cn">${r.name}</div>
-        <div class="cm">
-          <span class="cst">${st(rating)}</span>
+        <div class="cmeta">
+          <span class="cst">${stars(rating)}</span>
           <span class="crn">${rating}</span>
           <span class="ctg">${r.primary_cuisine||"Restaurant"}</span>
         </div>
         ${r.user_review_count?`<div class="crv">${r.user_review_count} review${r.user_review_count>1?"s":""}</div>`:""}
-        ${amen?`<div class="cam"><span>${amen}</span></div>`:""}
+        ${amen?`<div class="cam">${amen}</div>`:""}
       </div>
     </div>`;
   }).join("");
@@ -316,38 +260,31 @@ function hlCard(id){
 // DETAIL PANEL
 function openDP(id){
   const r=DATA.find(x=>x.id===id);
-  if(!r)return;
+  if(!r){console.error("Not found:",id);return;}
   hlCard(id);
-  const photo=r.photo||FALLBACK;
+  const photo=r.photo||FB;
   const rating=r.user_rating||r.rating||0;
-  const tags=[
-    ...(r.cuisine||[]).map(c=>`<span class="ptg">${c}</span>`),
+  const tags=[...(r.cuisine||[]).map(c=>`<span class="ptg">${c}</span>`),
     r.wifi?`<span class="ptg">📶 WiFi</span>`:"",
     r.vegetarian?`<span class="ptg">🌿 Vegetarian</span>`:"",
     r.outdoor_seating?`<span class="ptg">🌳 Outdoor</span>`:"",
-    r.takeaway?`<span class="ptg">🥡 Takeaway</span>`:"",
-  ].filter(Boolean).join("");
+    r.takeaway?`<span class="ptg">🥡 Takeaway</span>`:""].filter(Boolean).join("");
   const revs=r.reviews&&r.reviews.length
     ?[...r.reviews].reverse().map(rv=>`<div class="ri">
-        <div class="rim">
-          <span class="riname">${rv.name||"Anonymous"}</span>
-          <span class="rist">${"★".repeat(rv.rating)}${"☆".repeat(5-rv.rating)}</span>
-          <span class="ridt">${rv.date||""}</span>
-        </div>
-        <div class="ritx">${rv.comment}</div>
-      </div>`).join("")
+        <div class="rim"><span class="riname">${rv.name||"Anonymous"}</span>
+        <span class="rist">${"★".repeat(rv.rating)}${"☆".repeat(5-rv.rating)}</span>
+        <span class="ridt">${rv.date||""}</span></div>
+        <div class="ritx">${rv.comment}</div></div>`).join("")
     :`<div class="norv">No reviews yet. Be the first!</div>`;
-  const eid=id.replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+  const eid=id.replace(/'/g,"\\'");
   document.getElementById("dpt").textContent=r.name;
   document.getElementById("dpb").innerHTML=`
-    <img class="dpi" src="${photo}" onerror="this.src='${FALLBACK}'" alt="${r.name}"/>
-    <div class="dpr">
-      <span class="dps">${st(rating)}</span>
-      <span class="dpn">${rating}</span>
-      ${r.user_review_count?`<span style="font-size:.7rem;color:var(--muted)">(${r.user_review_count} reviews)</span>`:""}
+    <img class="dpi" src="${photo}" onerror="this.src='${FB}'" alt="${r.name}"/>
+    <div class="dpr"><span class="dps">${stars(rating)}</span><span class="dpn">${rating}</span>
+      ${r.user_review_count?`<span style="font-size:.7rem;color:#7A6A58">(${r.user_review_count} reviews)</span>`:""}
     </div>
     <div class="dptg">${tags}</div>
-    <div class="dpi2">
+    <div class="dpinfo">
       ${r.opening_hours?`<div class="ir">🕐 <span>${r.opening_hours}</span></div>`:""}
       ${r.phone?`<div class="ir">📞 <span>${r.phone}</span></div>`:""}
       ${r.email?`<div class="ir">✉️ <span>${r.email}</span></div>`:""}
@@ -397,7 +334,7 @@ document.getElementById("abtn").onclick=async()=>{
   const p=document.getElementById("ap");
   p.classList.toggle("open");
   if(!p.classList.contains("open"))return;
-  const d=await (await fetch("/api/analytics")).json();
+  const d=await(await fetch("/api/analytics")).json();
   const mc=Math.max(...Object.values(d.cuisine_breakdown),1);
   const ma=Math.max(...Object.values(d.amenities),1);
   document.getElementById("apc").innerHTML=`
@@ -411,18 +348,18 @@ document.getElementById("abtn").onclick=async()=>{
       ${Object.entries(d.cuisine_breakdown).map(([c,n])=>`<div class="br"><span class="brl">${c}</span><div class="bt"><div class="bf" style="width:${(n/mc*100).toFixed(0)}%"></div></div><span class="bv">${n}</span></div>`).join("")}
     </div>
     <div class="asc"><div class="atl">⭐ Top Rated</div>
-      <div class="tl">${d.top_rated.map((r,i)=>`<div class="ti"><span class="trk">#${i+1}</span><span class="tn">${r.name}</span><span style="font-size:.66rem;color:var(--muted);margin-right:5px">${r.cuisine}</span><span class="tr">★${r.rating}</span></div>`).join("")}</div>
+      <div class="tl">${d.top_rated.map((r,i)=>`<div class="ti"><span class="trk">#${i+1}</span><span class="tn">${r.name}</span><span style="font-size:.66rem;color:#7A6A58;margin-right:5px">${r.cuisine}</span><span class="tr">★${r.rating}</span></div>`).join("")}</div>
     </div>
     <div class="asc"><div class="atl">🏷️ Amenities</div>
       ${Object.entries(d.amenities).map(([a,n])=>`<div class="br"><span class="brl">${a}</span><div class="bt"><div class="bf" style="width:${(n/ma*100).toFixed(0)}%"></div></div><span class="bv">${n}</span></div>`).join("")}
     </div>`;
 };
-function closeAP(){document.getElementById("ap").classList.remove("open");}
 
-// LOAD DATA
+// LOAD
 async function load(){
-  const p=new URLSearchParams({search:F.search,cuisine:F.cuisine,min_rating:F.minRating,wifi:F.wifi,vegetarian:F.vegetarian,outdoor:F.outdoor});
-  const d=await (await fetch(`/api/restaurants?${p}`)).json();
+  const p=new URLSearchParams({search:F.search,cuisine:F.cuisine,min_rating:F.minRating,
+    wifi:F.wifi,vegetarian:F.vegetarian,outdoor:F.outdoor});
+  const d=await(await fetch(`/api/restaurants?${p}`)).json();
   DATA=d.restaurants;
   document.getElementById("cnt").textContent=`${d.total} place${d.total!==1?"s":""}`;
   renderCards(DATA);
@@ -430,18 +367,27 @@ async function load(){
 }
 
 async function loadCuisines(){
-  const list=await (await fetch("/api/cuisines")).json();
+  const list=await(await fetch("/api/cuisines")).json();
   const sel=document.getElementById("csel");
-  list.forEach(c=>{const o=document.createElement("option");o.value=c.toLowerCase();o.textContent=c;sel.appendChild(o);});
+  list.forEach(c=>{
+    const o=document.createElement("option");
+    o.value=c.toLowerCase();
+    o.textContent=c;
+    sel.appendChild(o);
+  });
 }
 
 // EVENTS
 let ST;
-document.getElementById("srch").addEventListener("input",e=>{clearTimeout(ST);ST=setTimeout(()=>{F.search=e.target.value;load();},280);});
+document.getElementById("srch").addEventListener("input",e=>{
+  clearTimeout(ST);ST=setTimeout(()=>{F.search=e.target.value;load();},300);
+});
 document.getElementById("csel").addEventListener("change",e=>{F.cuisine=e.target.value;load();});
 document.getElementById("rsl").addEventListener("input",e=>{
-  const v=parseFloat(e.target.value);F.minRating=v;
-  document.getElementById("rsv").textContent=v===0?"Any":`${v}★`;
+  const v=parseFloat(e.target.value);
+  F.minRating=v;
+  // At minimum (3.0) show "Any", otherwise show the value
+  document.getElementById("rsv").textContent=v<=3.0?"Any":`${v}★`;
   load();
 });
 document.querySelectorAll(".chip").forEach(c=>{
@@ -454,10 +400,12 @@ document.querySelectorAll(".tab").forEach(t=>{
   });
 });
 
-// BOOT — always reset slider on load
+// BOOT
 (async()=>{
+  // Force slider to minimum (shows all restaurants)
   const slider=document.getElementById("rsl");
-  slider.value=0; F.minRating=0;
+  slider.value=3.0;
+  F.minRating=3.0;
   document.getElementById("rsv").textContent="Any";
   initMap();
   await loadCuisines();

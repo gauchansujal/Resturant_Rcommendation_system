@@ -5,8 +5,16 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-DATA_PATH    = os.path.join(os.path.dirname(__file__), "data", "restaurants_clean.json")
-REVIEWS_PATH = os.path.join(os.path.dirname(__file__), "data", "reviews.json")
+# Auto-detect data folder — works whether JSON is in root or data/ subfolder
+_base = os.path.dirname(__file__)
+if os.path.exists(os.path.join(_base, "data", "restaurants_clean.json")):
+    DATA_PATH    = os.path.join(_base, "data", "restaurants_clean.json")
+    REVIEWS_PATH = os.path.join(_base, "data", "reviews.json")
+else:
+    DATA_PATH    = os.path.join(_base, "restaurants_clean.json")
+    REVIEWS_PATH = os.path.join(_base, "reviews.json")
+
+print(f"[INFO] Loading data from: {DATA_PATH}")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -99,7 +107,8 @@ def get_restaurants():
     for r in restaurants:
         if cuisine and cuisine != "all":
             cuisines_lower = [c.lower() for c in r.get("cuisine", [])]
-            if not any(cuisine in c for c in cuisines_lower):
+            primary_lower  = (r.get("primary_cuisine") or "").lower()
+            if not any(cuisine == c for c in cuisines_lower) and cuisine != primary_lower:
                 continue
         if search:
             name   = (r.get("name")        or "").lower()
