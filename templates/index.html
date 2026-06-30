@@ -8,9 +8,15 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+:root{
+  --bg:var(--bg); --ink:var(--ink); --muted:var(--muted); --border:var(--border); --card:#ffffff; --hdr:var(--ink); --tagbg:var(--tagbg);
+}
+body.dark{
+  --bg:#15110F; --ink:#F0E8DF; --muted:#A89682; --border:#332A24; --card:#1F1814; --hdr:#0D0A08; --tagbg:#2A211C;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:#FDF6EE;color:#1A1209;height:100vh;overflow:hidden;display:flex;flex-direction:column;}
-header{height:56px;background:#1A1209;display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);height:100vh;overflow:hidden;display:flex;flex-direction:column;transition:background .25s,color .25s;}
+header{height:56px;background:var(--hdr);display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0;}
 .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;white-space:nowrap;}
 .logo b{color:#E8431A;}
 .sw{flex:1;max-width:380px;position:relative;}
@@ -22,91 +28,105 @@ header{height:56px;background:#1A1209;display:flex;align-items:center;padding:0 
 .ib{background:rgba(255,255,255,.13);border:none;color:#fff;width:32px;height:32px;border-radius:7px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
 .ib:hover{background:rgba(255,255,255,.23);}
 .main{display:flex;flex:1;overflow:hidden;}
-.sb{width:285px;background:#FDF6EE;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
-.flt{padding:12px;border-bottom:1px solid #E8DDD2;display:flex;flex-direction:column;gap:10px;}
-.lbl{font-family:'Sora',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A6A58;margin-bottom:2px;}
-select{width:100%;padding:7px 8px;border:1px solid #E8DDD2;border-radius:7px;background:#fff;color:#1A1209;font-size:.82rem;font-family:'Inter',sans-serif;cursor:pointer;outline:none;}
+.sb{width:285px;background:var(--bg);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
+.flt{padding:12px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:10px;}
+.lbl{font-family:'Sora',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+select{width:100%;padding:7px 8px;border:1px solid var(--border);border-radius:7px;background:var(--card);color:var(--ink);font-size:.82rem;font-family:'Inter',sans-serif;cursor:pointer;outline:none;}
 .srow{display:flex;align-items:center;gap:10px;}
 input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
 .sv{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:#E8431A;min-width:36px;}
 .chips{display:flex;flex-wrap:wrap;gap:5px;}
-.chip{padding:4px 11px;border-radius:20px;border:1px solid #E8DDD2;background:#fff;font-size:.71rem;cursor:pointer;user-select:none;color:#7A6A58;}
+.chip{padding:4px 11px;border-radius:20px;border:1px solid var(--border);background:var(--card);font-size:.71rem;cursor:pointer;user-select:none;color:var(--muted);}
 .chip.on{background:#E8431A;border-color:#E8431A;color:#fff;}
-.tabs{display:flex;border-bottom:1px solid #E8DDD2;flex-shrink:0;background:#FDF6EE;}
-.tab{flex:1;padding:9px 4px;text-align:center;font-size:.69rem;font-family:'Sora',sans-serif;font-weight:700;cursor:pointer;color:#7A6A58;border-bottom:2px solid transparent;}
+.tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--bg);}
+.tab{flex:1;padding:9px 4px;text-align:center;font-size:.69rem;font-family:'Sora',sans-serif;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;}
 .tab.on{color:#E8431A;border-bottom-color:#E8431A;}
-.lst{flex:1;overflow-y:auto;padding:8px;background:#FDF6EE;}
+.lst{flex:1;overflow-y:auto;padding:8px;background:var(--bg);}
 .lst::-webkit-scrollbar{width:3px;}
-.lst::-webkit-scrollbar-thumb{background:#E8DDD2;border-radius:3px;}
-.card{background:#fff;border:1px solid #E8DDD2;border-left:3px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;margin-bottom:7px;}
+.lst::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.card{background:var(--card);border:1px solid var(--border);border-left:3px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;margin-bottom:7px;}
 .card:hover{border-left-color:#E8431A;box-shadow:0 2px 8px rgba(0,0,0,.08);}
 .card.sel{border-left-color:#E8431A;}
-.cimg{width:100%;height:90px;object-fit:cover;display:block;background:#F3EDE7;}
-.cbd{padding:10px 11px;background:#fff;}
-.cn{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:#1A1209;margin-bottom:5px;line-height:1.3;}
+.cimg{width:100%;height:90px;object-fit:cover;display:block;background:var(--tagbg);}
+.cbd{padding:10px 11px;background:var(--card);}
+.cn{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:5px;line-height:1.3;}
 .cmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px;}
 .cst{color:#F59E0B;font-size:.72rem;}
-.crn{font-weight:700;font-size:.76rem;color:#1A1209;}
-.ctg{background:#F3EDE7;color:#7A6A58;font-size:.64rem;padding:2px 7px;border-radius:10px;}
-.cam{font-size:.68rem;color:#7A6A58;margin-top:3px;}
-.crv{font-size:.66rem;color:#7A6A58;}
+.crn{font-weight:700;font-size:.76rem;color:var(--ink);}
+.ctg{background:var(--tagbg);color:var(--muted);font-size:.64rem;padding:2px 7px;border-radius:10px;}
+.cam{font-size:.68rem;color:var(--muted);margin-top:3px;}
+.crv{font-size:.66rem;color:var(--muted);}
 #map{flex:1;z-index:1;}
-.dp{position:fixed;right:0;top:56px;bottom:0;width:340px;background:#fff;border-left:1px solid #E8DDD2;z-index:500;transform:translateX(110%);transition:transform .28s;display:flex;flex-direction:column;}
+.dp{position:fixed;right:0;top:56px;bottom:0;width:340px;background:var(--card);border-left:1px solid var(--border);z-index:500;transform:translateX(110%);transition:transform .28s;display:flex;flex-direction:column;}
 .dp.open{transform:translateX(0);}
-.dph{padding:12px 14px;border-bottom:1px solid #E8DDD2;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.dpt{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#1A1209;}
-.xcb{background:none;border:none;font-size:1rem;cursor:pointer;color:#7A6A58;padding:3px 6px;border-radius:5px;}
+.dph{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.dpt{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:var(--ink);}
+.xcb{background:none;border:none;font-size:1rem;cursor:pointer;color:var(--muted);padding:3px 6px;border-radius:5px;}
 .dpb{flex:1;overflow-y:auto;padding:14px;}
-.dpi{width:100%;height:155px;object-fit:cover;border-radius:9px;margin-bottom:12px;display:block;background:#F3EDE7;}
+.dpi{width:100%;height:155px;object-fit:cover;border-radius:9px;margin-bottom:12px;display:block;background:var(--tagbg);}
 .dpr{display:flex;align-items:center;gap:7px;margin-bottom:10px;}
 .dps{color:#F59E0B;font-size:.95rem;}
-.dpn{font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:#1A1209;}
+.dpn{font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink);}
 .dptg{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
-.ptg{background:#F3EDE7;color:#7A6A58;font-size:.67rem;padding:2px 8px;border-radius:10px;}
+.ptg{background:var(--tagbg);color:var(--muted);font-size:.67rem;padding:2px 8px;border-radius:10px;}
 .dpinfo{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
-.ir{display:flex;gap:7px;font-size:.77rem;color:#7A6A58;}
+.ir{display:flex;gap:7px;font-size:.77rem;color:var(--muted);}
 .wl{display:inline-block;color:#E8431A;font-size:.75rem;font-weight:700;text-decoration:none;margin-bottom:14px;}
-.rsec{border-top:1px solid #E8DDD2;padding-top:12px;}
-.rtl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:#1A1209;margin-bottom:9px;}
+.likebtn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:7px 13px;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:13px;font-family:'Sora',sans-serif;transition:all .15s;}
+.likebtn:hover{border-color:#E8431A;color:#E8431A;}
+.likebtn.liked{background:#E8431A;border-color:#E8431A;color:#fff;}
+.simsec{border-top:1px solid var(--border);padding-top:12px;margin-top:12px;}
+.simcard{display:flex;gap:9px;align-items:center;background:var(--bg);border-radius:8px;padding:8px;cursor:pointer;margin-bottom:7px;transition:background .15s;}
+.simcard:hover{background:var(--tagbg);}
+.simimg{width:46px;height:46px;border-radius:7px;object-fit:cover;flex-shrink:0;background:var(--tagbg);}
+.simname{font-weight:700;font-size:.78rem;color:var(--ink);margin-bottom:2px;}
+.simmeta{font-size:.69rem;color:var(--muted);}
+.simscore{margin-left:auto;background:var(--tagbg);color:#E8431A;font-size:.66rem;font-weight:700;padding:2px 7px;border-radius:8px;flex-shrink:0;}
+.mlbadge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,#E8431A,#C13510);color:#fff;font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:10px;}
+.foryou-intro{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;text-align:center;}
+.foryou-intro h3{font-family:'Sora',sans-serif;font-size:.85rem;color:var(--ink);margin-bottom:5px;}
+.foryou-intro p{font-size:.75rem;color:var(--muted);line-height:1.5;}
+.rsec{border-top:1px solid var(--border);padding-top:12px;}
+.rtl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:var(--ink);margin-bottom:9px;}
 .rf{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
-.rf input,.rf textarea{width:100%;padding:7px 9px;border:1px solid #E8DDD2;border-radius:7px;background:#FDF6EE;color:#1A1209;font-size:.79rem;font-family:'Inter',sans-serif;outline:none;resize:vertical;}
+.rf input,.rf textarea{width:100%;padding:7px 9px;border:1px solid var(--border);border-radius:7px;background:var(--bg);color:var(--ink);font-size:.79rem;font-family:'Inter',sans-serif;outline:none;resize:vertical;}
 .rf input:focus,.rf textarea:focus{border-color:#E8431A;}
 .spk{display:flex;gap:5px;}
 .spk span{font-size:1.3rem;cursor:pointer;color:#D1C5B8;}
 .spk span.lit{color:#F59E0B;}
 .rbtn{background:#E8431A;color:#fff;border:none;padding:8px 15px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.79rem;cursor:pointer;}
 .rl{display:flex;flex-direction:column;gap:7px;}
-.ri{background:#FDF6EE;border-radius:7px;padding:9px;}
+.ri{background:var(--bg);border-radius:7px;padding:9px;}
 .rim{display:flex;align-items:center;gap:6px;margin-bottom:3px;}
-.riname{font-weight:700;font-size:.77rem;color:#1A1209;}
+.riname{font-weight:700;font-size:.77rem;color:var(--ink);}
 .rist{color:#F59E0B;font-size:.71rem;}
-.ridt{color:#7A6A58;font-size:.67rem;margin-left:auto;}
-.ritx{font-size:.77rem;color:#7A6A58;line-height:1.5;}
-.norv{color:#7A6A58;font-size:.77rem;font-style:italic;}
-.ap{position:fixed;left:285px;right:0;top:56px;bottom:0;background:#FDF6EE;z-index:400;overflow-y:auto;padding:16px;display:none;}
+.ridt{color:var(--muted);font-size:.67rem;margin-left:auto;}
+.ritx{font-size:.77rem;color:var(--muted);line-height:1.5;}
+.norv{color:var(--muted);font-size:.77rem;font-style:italic;}
+.ap{position:fixed;left:285px;right:0;top:56px;bottom:0;background:var(--bg);z-index:400;overflow-y:auto;padding:16px;display:none;}
 .ap.open{display:block;}
 .agd{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:18px;}
-.ast{background:#fff;border:1px solid #E8DDD2;border-radius:9px;padding:13px;text-align:center;}
+.ast{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:13px;text-align:center;}
 .asn{font-family:'Sora',sans-serif;font-weight:700;font-size:1.5rem;color:#E8431A;}
-.asl{font-size:.7rem;color:#7A6A58;margin-top:3px;}
-.asc{background:#fff;border:1px solid #E8DDD2;border-radius:9px;padding:13px;margin-bottom:10px;}
-.atl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:#1A1209;margin-bottom:9px;}
+.asl{font-size:.7rem;color:var(--muted);margin-top:3px;}
+.asc{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:13px;margin-bottom:10px;}
+.atl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:var(--ink);margin-bottom:9px;}
 .br{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
-.brl{font-size:.72rem;width:110px;flex-shrink:0;color:#1A1209;}
-.bt{flex:1;background:#E8DDD2;border-radius:4px;height:7px;overflow:hidden;}
+.brl{font-size:.72rem;width:110px;flex-shrink:0;color:var(--ink);}
+.bt{flex:1;background:var(--border);border-radius:4px;height:7px;overflow:hidden;}
 .bf{height:100%;background:#E8431A;border-radius:4px;}
-.bv{font-size:.69rem;color:#7A6A58;min-width:20px;text-align:right;}
+.bv{font-size:.69rem;color:var(--muted);min-width:20px;text-align:right;}
 .tl{display:flex;flex-direction:column;gap:6px;}
 .ti{display:flex;align-items:center;gap:7px;}
 .trk{font-family:'Sora',sans-serif;font-weight:700;font-size:.77rem;color:#E8431A;width:20px;}
-.tn{font-size:.8rem;flex:1;color:#1A1209;}
+.tn{font-size:.8rem;flex:1;color:var(--ink);}
 .tr{font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;color:#F59E0B;}
-#ld{position:fixed;inset:0;background:#FDF6EE;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:'Sora',sans-serif;font-size:.9rem;color:#7A6A58;gap:10px;}
-.sp{width:18px;height:18px;border:3px solid #E8DDD2;border-top-color:#E8431A;border-radius:50%;animation:rot .7s linear infinite;}
+#ld{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;font-family:'Sora',sans-serif;font-size:.9rem;color:var(--muted);gap:10px;}
+.sp{width:18px;height:18px;border:3px solid var(--border);border-top-color:#E8431A;border-radius:50%;animation:rot .7s linear infinite;}
 @keyframes rot{to{transform:rotate(360deg);}}
-#tst{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(70px);background:#1A1209;color:#fff;padding:8px 16px;border-radius:7px;font-size:.78rem;z-index:9998;transition:transform .25s;pointer-events:none;}
+#tst{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--ink);color:#fff;padding:8px 16px;border-radius:7px;font-size:.78rem;z-index:9998;transition:transform .25s;pointer-events:none;}
 #tst.show{transform:translateX(-50%) translateY(0);}
-.empty{text-align:center;padding:40px 16px;color:#7A6A58;font-size:.82rem;line-height:1.8;}
+.empty{text-align:center;padding:40px 16px;color:var(--muted);font-size:.82rem;line-height:1.8;}
 </style>
 </head>
 <body>
@@ -120,7 +140,9 @@ input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
   </div>
   <div class="hr">
     <div class="badge" id="cnt">0 places</div>
-    <button class="ib" id="abtn">📊</button>
+    <button class="ib" id="rbtn" title="Recommended for you">✨</button>
+    <button class="ib" id="abtn" title="Analytics">📊</button>
+    <button class="ib" id="dbtn" title="Dark mode">🌙</button>
   </div>
 </header>
 
@@ -150,6 +172,7 @@ input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
     <div class="tabs">
       <div class="tab on" data-t="list">🍽️ List</div>
       <div class="tab" data-t="top">⭐ Top Rated</div>
+      <div class="tab" data-t="foryou">✨ For You</div>
     </div>
     <div class="lst" id="lst"></div>
   </div>
@@ -166,21 +189,37 @@ input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
 
 <div class="ap" id="ap">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-    <h2 style="font-family:'Sora',sans-serif;font-size:1rem;color:#1A1209;">📊 Analytics</h2>
+    <h2 style="font-family:'Sora',sans-serif;font-size:1rem;color:var(--ink);">📊 Analytics</h2>
     <button class="xcb" onclick="document.getElementById('ap').classList.remove('open')">✕ Close</button>
   </div>
   <div id="apc">Loading…</div>
 </div>
 
 <script>
-const FB = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80";
-let DATA=[], MKRS={}, AID=null, MAP, TAB="list", SRAT=0;
+const FB = "https://picsum.photos/seed/restaurant-fallback/400/300";
+let DATA=[], ALL_DATA=[], MKRS={}, AID=null, MAP, TAB="list", SRAT=0;
+
+// ── ML: simple per-browser user id, persisted in localStorage ──────────
+let USER_ID = localStorage.getItem("thamel_user_id");
+if(!USER_ID){
+  USER_ID = "u_" + Math.random().toString(36).slice(2,10) + Date.now().toString(36);
+  localStorage.setItem("thamel_user_id", USER_ID);
+}
+let USER_LIKES = new Set(); // populated on boot from /api/ml/likes/<id>
 // minRating starts at 3.0 (lowest in our data) = show all
 const F = {search:"",cuisine:"all",minRating:3.0,wifi:false,vegetarian:false,outdoor:false};
 
 function sid(id){ return "c"+String(id).replace(/\W/g,"_"); }
 function stars(r){const f=Math.floor(r),h=r%1>=.5?1:0;return "★".repeat(f)+(h?"½":"")+"☆".repeat(5-f-h);}
 function toast(m){const t=document.getElementById("tst");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500);}
+
+// DARK MODE
+let DARK=false;
+document.getElementById("dbtn").onclick=()=>{
+  DARK=!DARK;
+  document.body.classList.toggle("dark",DARK);
+  document.getElementById("dbtn").textContent=DARK?"☀️":"🌙";
+};
 
 // MAP
 function initMap(){
@@ -218,8 +257,10 @@ function setMarkers(list){
 // CARDS
 function renderCards(list){
   const area=document.getElementById("lst");
-  let sorted=[...list];
-  if(TAB==="top") sorted.sort((a,b)=>(b.user_rating||b.rating)-(a.user_rating||a.rating));
+  // Top Rated: always use full DATA sorted by rating, ignore filters
+  let sorted = TAB==="top"
+    ? [...ALL_DATA].sort((a,b)=>(b.user_rating||b.rating)-(a.user_rating||a.rating)).slice(0,20)
+    : [...list];
   if(!sorted.length){
     area.innerHTML=`<div class="empty">🍽️<br><br>No restaurants match.<br><small>Try lowering the minimum rating slider.</small></div>`;
     return;
@@ -259,7 +300,7 @@ function hlCard(id){
 
 // DETAIL PANEL
 function openDP(id){
-  const r=DATA.find(x=>x.id===id);
+  const r=DATA.find(x=>x.id===id) || ALL_DATA.find(x=>x.id===id);
   if(!r){console.error("Not found:",id);return;}
   hlCard(id);
   const photo=r.photo||FB;
@@ -292,6 +333,13 @@ function openDP(id){
       ${r.description?`<div class="ir" style="font-style:italic">💬 <span>${r.description.slice(0,130)}…</span></div>`:""}
     </div>
     ${r.website?`<a class="wl" href="${r.website}" target="_blank">🔗 Visit website →</a>`:""}
+    <button class="likebtn" id="likebtn-${sid(id)}" onclick="toggleLike('${eid}')">
+      ${USER_LIKES.has(id)?"❤️ Liked":"🤍 Like this place"}
+    </button>
+    <div class="simsec">
+      <div class="rtl">🤖 Similar Restaurants <span class="mlbadge">ML</span></div>
+      <div id="simlist-${sid(id)}">Loading similar places…</div>
+    </div>
     <div class="rsec">
       <div class="rtl">✍️ Write a Review</div>
       <div class="rf">
@@ -306,6 +354,7 @@ function openDP(id){
       <div class="rtl">💬 Reviews</div>
       <div class="rl">${revs}</div>
     </div>`;
+  loadSimilar(id);
   SRAT=0;
   document.querySelectorAll(".spk span").forEach(s=>{
     s.onmouseenter=()=>document.querySelectorAll(".spk span").forEach((x,i)=>x.classList.toggle("lit",i<s.dataset.v));
@@ -329,14 +378,111 @@ async function postRev(rid){
   if(d.success){toast("✅ Review posted!");document.getElementById("rv-cm").value="";SRAT=0;await load();openDP(rid);}
 }
 
+// ── ML: LIKES ────────────────────────────────────────────────────────
+async function loadUserLikes(){
+  try{
+    const d=await(await fetch(`/api/ml/likes/${USER_ID}`)).json();
+    USER_LIKES = new Set(d.liked || []);
+  }catch(e){console.error("loadUserLikes failed",e);}
+}
+
+async function toggleLike(id){
+  const btn = document.getElementById(`likebtn-${sid(id)}`);
+  const isLiked = USER_LIKES.has(id);
+  const endpoint = isLiked ? "/api/ml/unlike" : "/api/ml/like";
+  const res = await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({user_id:USER_ID, restaurant_id:id})});
+  const d = await res.json();
+  if(d.success){
+    if(isLiked){ USER_LIKES.delete(id); toast("Removed from your likes"); }
+    else{ USER_LIKES.add(id); toast("❤️ Added to your likes — recommendations updated!"); }
+    if(btn) btn.innerHTML = USER_LIKES.has(id) ? "❤️ Liked" : "🤍 Like this place";
+  }
+}
+
+// ── ML: SIMILAR RESTAURANTS (content-based, cosine similarity) ─────────
+async function loadSimilar(id){
+  const container = document.getElementById(`simlist-${sid(id)}`);
+  if(!container) return;
+  try{
+    const d = await(await fetch(`/api/ml/similar/${encodeURIComponent(id)}?n=4`)).json();
+    if(!d.similar || !d.similar.length){
+      container.innerHTML = `<div class="norv">No similar restaurants found.</div>`;
+      return;
+    }
+    container.innerHTML = d.similar.map(s=>{
+      const match = s.restaurant_photo || `https://picsum.photos/seed/${String(s.id).replace(/\//g,"-")}/100/100`;
+      const eid = s.id.replace(/'/g,"\\'");
+      return `<div class="simcard" onclick="openDP('${eid}')">
+        <img class="simimg" src="${match}" onerror="this.style.display='none'"/>
+        <div>
+          <div class="simname">${s.name}</div>
+          <div class="simmeta">${s.primary_cuisine} · ${s.rating}★</div>
+        </div>
+        <span class="simscore">${Math.round(s.similarity*100)}% match</span>
+      </div>`;
+    }).join("");
+  }catch(e){
+    container.innerHTML = `<div class="norv">Couldn't load similar restaurants.</div>`;
+  }
+}
+
+// ── ML: PERSONALIZED "FOR YOU" RECOMMENDATIONS ──────────────────────────
+async function loadForYou(){
+  const area=document.getElementById("lst");
+  area.innerHTML = `<div class="empty">🤖<br><br>Finding restaurants for you…</div>`;
+  try{
+    const d = await(await fetch(`/api/ml/recommend?user_id=${USER_ID}&n=12`)).json();
+    const recs = d.recommendations || [];
+    let html = "";
+    if(d.cold_start){
+      html += `<div class="foryou-intro">
+        <h3>✨ Like a few places to get started</h3>
+        <p>Tap 🤍 on restaurants you'd enjoy. Our ML model will learn your taste and recommend similar places. For now, here are the most popular spots:</p>
+      </div>`;
+    } else {
+      html += `<div class="foryou-intro">
+        <h3>✨ Picked for you</h3>
+        <p>Based on ${USER_LIKES.size} restaurant${USER_LIKES.size!==1?"s":""} you liked, using content-based ML matching.</p>
+      </div>`;
+    }
+    if(!recs.length){
+      html += `<div class="empty">No recommendations yet.</div>`;
+    } else {
+      html += recs.map(r=>{
+        const photo = `https://picsum.photos/seed/${String(r.id).replace(/\//g,"-")}/400/300`;
+        const eid = r.id.replace(/'/g,"\\'");
+        const scoreTag = r.score!=null ? `<span class="ctg" style="background:linear-gradient(135deg,#E8431A,#C13510);color:#fff;">${Math.round(r.score*100)}% match</span>` : `<span class="ctg">🔥 Popular</span>`;
+        return `<div class="card" id="${sid(r.id)}" onclick="openDP('${eid}')">
+          <img class="cimg" src="${photo}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'"/>
+          <div class="cbd">
+            <div class="cn">${r.name}</div>
+            <div class="cmeta">
+              <span class="cst">${stars(r.rating)}</span>
+              <span class="crn">${r.rating}</span>
+              <span class="ctg">${r.primary_cuisine}</span>
+            </div>
+            <div style="margin-top:4px;">${scoreTag}</div>
+          </div>
+        </div>`;
+      }).join("");
+    }
+    area.innerHTML = html;
+  }catch(e){
+    area.innerHTML = `<div class="empty">Couldn't load recommendations.</div>`;
+  }
+}
+
 // ANALYTICS
 document.getElementById("abtn").onclick=async()=>{
   const p=document.getElementById("ap");
   p.classList.toggle("open");
   if(!p.classList.contains("open"))return;
   const d=await(await fetch("/api/analytics")).json();
+  const ml=await(await fetch("/api/ml/report")).json();
   const mc=Math.max(...Object.values(d.cuisine_breakdown),1);
   const ma=Math.max(...Object.values(d.amenities),1);
+  const maxImp=Math.max(...ml.rating_model.top_features.map(f=>f.importance),0.0001);
   document.getElementById("apc").innerHTML=`
     <div class="agd">
       <div class="ast"><div class="asn">${d.total_restaurants}</div><div class="asl">Restaurants</div></div>
@@ -352,7 +498,30 @@ document.getElementById("abtn").onclick=async()=>{
     </div>
     <div class="asc"><div class="atl">🏷️ Amenities</div>
       ${Object.entries(d.amenities).map(([a,n])=>`<div class="br"><span class="brl">${a}</span><div class="bt"><div class="bf" style="width:${(n/ma*100).toFixed(0)}%"></div></div><span class="bv">${n}</span></div>`).join("")}
-    </div>`;
+    </div>
+
+    <div class="asc">
+      <div class="atl">🤖 ML Model: Rating Predictor <span class="mlbadge">RandomForest</span></div>
+      <div style="display:flex;gap:18px;margin-bottom:12px;">
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink)">${ml.rating_model.r2}</div><div style="font-size:.68rem;color:var(--muted)">R² score</div></div>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink)">±${ml.rating_model.mae}</div><div style="font-size:.68rem;color:var(--muted)">Mean Absolute Error</div></div>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink)">${ml.rating_model.train_size}/${ml.rating_model.test_size}</div><div style="font-size:.68rem;color:var(--muted)">Train/Test split</div></div>
+      </div>
+      <div style="font-size:.71rem;color:var(--muted);margin-bottom:8px;font-weight:700;">Top features predicting rating:</div>
+      ${ml.rating_model.top_features.slice(0,6).map(f=>`<div class="br"><span class="brl">${f.feature.replace('cuisine_','🍽️ ')}</span><div class="bt"><div class="bf" style="width:${(f.importance/maxImp*100).toFixed(0)}%"></div></div><span class="bv">${(f.importance*100).toFixed(0)}%</span></div>`).join("")}
+    </div>
+
+    <div class="asc">
+      <div class="atl">🧩 ML Clusters <span class="mlbadge">K-Means</span></div>
+      <div style="font-size:.71rem;color:var(--muted);margin-bottom:10px;">Restaurants grouped automatically by cuisine + amenities similarity (unsupervised learning, no labels given).</div>
+      ${ml.clustering.clusters.sort((a,b)=>b.size-a.size).map(c=>`
+        <div class="ti" style="margin-bottom:9px;">
+          <span class="trk" style="width:auto;background:var(--tagbg);color:#E8431A;padding:2px 8px;border-radius:8px;">${c.size}</span>
+          <span class="tn">${c.label}</span>
+          <span class="tr">avg ${c.avg_rating}★</span>
+        </div>`).join("")}
+    </div>
+  `;
 };
 
 // LOAD
@@ -364,6 +533,13 @@ async function load(){
   document.getElementById("cnt").textContent=`${d.total} place${d.total!==1?"s":""}`;
   renderCards(DATA);
   setMarkers(DATA);
+}
+
+async function loadAll(){
+  // Fetch the complete unfiltered restaurant list once, for the Top Rated tab
+  const d=await(await fetch("/api/restaurants?cuisine=all&min_rating=0")).json();
+  ALL_DATA=d.restaurants;
+  console.log("[loadAll] ALL_DATA populated with", ALL_DATA.length, "restaurants");
 }
 
 async function loadCuisines(){
@@ -394,10 +570,21 @@ document.querySelectorAll(".chip").forEach(c=>{
   c.addEventListener("click",()=>{c.classList.toggle("on");F[c.dataset.f]=c.classList.contains("on");load();});
 });
 document.querySelectorAll(".tab").forEach(t=>{
-  t.addEventListener("click",()=>{
+  t.addEventListener("click",async()=>{
     document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
-    t.classList.add("on");TAB=t.dataset.t;renderCards(DATA);
+    t.classList.add("on");TAB=t.dataset.t;
+    if(TAB==="top" && ALL_DATA.length===0){
+      await loadAll();
+    }
+    if(TAB==="foryou"){
+      await loadForYou();
+    } else {
+      renderCards(DATA);
+    }
   });
+});
+document.getElementById("rbtn").addEventListener("click",()=>{
+  document.querySelector('.tab[data-t="foryou"]').click();
 });
 
 // BOOT
@@ -410,6 +597,8 @@ document.querySelectorAll(".tab").forEach(t=>{
   initMap();
   await loadCuisines();
   await load();
+  await loadAll();
+  await loadUserLikes();
   document.getElementById("ld").style.opacity="0";
   setTimeout(()=>document.getElementById("ld").remove(),300);
 })();
