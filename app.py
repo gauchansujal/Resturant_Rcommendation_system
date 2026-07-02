@@ -7,6 +7,7 @@ from datetime import datetime
 # Make the ml/ folder importable
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "ml"))
 from recommender import RestaurantRecommender
+from generate_charts import generate_all_charts
 
 app = Flask(__name__)
 
@@ -29,6 +30,11 @@ recommender = RestaurantRecommender(DATA_PATH)
 print(f"[INFO] ML models ready. {recommender.model_report()['dataset_size']} restaurants, "
       f"{recommender.model_report()['feature_count']} features, "
       f"rating model R²={recommender.rf_metrics.get('r2')}")
+
+# ── Charts — generated once at startup, cached in memory as base64 PNGs ─────
+print("[INFO] Generating charts (pie, line, scatter, bar, ggplot, clusters)...")
+CHARTS_CACHE = generate_all_charts(DATA_PATH)
+print(f"[INFO] {len(CHARTS_CACHE)} charts ready and cached.")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -314,6 +320,45 @@ def ml_report():
     """Full model report — algorithm details, accuracy metrics, feature importances.
     Useful for a project writeup / ML dashboard."""
     return jsonify(recommender.model_report())
+
+@app.route("/api/ml/charts")
+def ml_charts_list():
+    """List available charts and metadata (without the heavy base64 data)."""
+    return jsonify({
+        "available": list(CHARTS_CACHE.keys()),
+        "descriptions": {
+            "pie":      "Pie chart — cuisine distribution",
+            "line":     "Line graph — predicted vs actual rating per restaurant",
+            "scatter":  "Scatter chart — model accuracy (predicted vs actual)",
+            "bar":      "Bar graph — feature importance (what drives ratings)",
+            "ggplot":   "ggplot-style histogram — rating distribution",
+            "clusters": "Scatter chart — K-Means clusters (PCA projection)",
+        },
+    })
+
+@app.route("/api/ml/chart/<name>")
+def ml_chart_image(name):
+    """Serve a chart as a raw PNG image (for <img src=...> tags)."""
+    if name not in CHARTS_CACHE:
+        return jsonify({"error": f"Unknown chart '{name}'. Available: {list(CHARTS_CACHE.keys())}"}), 404
+    import base64
+    from flask import Response
+    png_bytes = base64.b64decode(CHARTS_CACHE[name]["base64"])
+    return Response(png_bytes, mimetype="image/png")
+
+@app.route("/api/ml/chart_base64/<name>")
+def ml_chart_base64(name):
+    """Serve a chart as base64 JSON (for embedding without an extra HTTP request)."""
+    if name not in CHARTS_CACHE:
+        return jsonify({"error": f"Unknown chart '{name}'"}), 404
+    return jsonify({"name": name, "base64": CHARTS_CACHE[name]["base64"]})
+
+@app.route("/api/ml/charts/regenerate", methods=["POST"])
+def ml_charts_regenerate():
+    """Re-run chart generation (e.g. after new reviews change the rating model)."""
+    global CHARTS_CACHE
+    CHARTS_CACHE = generate_all_charts(DATA_PATH)
+    return jsonify({"success": True, "charts": list(CHARTS_CACHE.keys())})
 
 
 if __name__ == "__main__":

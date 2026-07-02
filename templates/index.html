@@ -86,6 +86,11 @@ input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
 .foryou-intro{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;text-align:center;}
 .foryou-intro h3{font-family:'Sora',sans-serif;font-size:.85rem;color:var(--ink);margin-bottom:5px;}
 .foryou-intro p{font-size:.75rem;color:var(--muted);line-height:1.5;}
+.chartgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;}
+.chartcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;overflow:hidden;}
+.chartcard img{width:100%;height:auto;border-radius:7px;display:block;background:#fff;}
+.chartcard-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.chart-loading{display:flex;align-items:center;justify-content:center;height:200px;color:var(--muted);font-size:.8rem;}
 .rsec{border-top:1px solid var(--border);padding-top:12px;}
 .rtl{font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;color:var(--ink);margin-bottom:9px;}
 .rf{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
@@ -192,7 +197,12 @@ input[type=range]{flex:1;accent-color:#E8431A;cursor:pointer;}
     <h2 style="font-family:'Sora',sans-serif;font-size:1rem;color:var(--ink);">📊 Analytics</h2>
     <button class="xcb" onclick="document.getElementById('ap').classList.remove('open')">✕ Close</button>
   </div>
+  <div class="tabs" style="margin-bottom:14px;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+    <div class="tab on" data-atab="overview" onclick="switchAnalyticsTab('overview')">📋 Overview</div>
+    <div class="tab" data-atab="charts" onclick="switchAnalyticsTab('charts')">📈 Charts</div>
+  </div>
   <div id="apc">Loading…</div>
+  <div id="apcharts" style="display:none;"></div>
 </div>
 
 <script>
@@ -474,6 +484,49 @@ async function loadForYou(){
 }
 
 // ANALYTICS
+// ── ANALYTICS: tab switching + chart gallery ────────────────────────────
+let CHARTS_LOADED = false;
+
+function switchAnalyticsTab(tab){
+  document.querySelectorAll('.tab[data-atab]').forEach(t=>t.classList.toggle('on', t.dataset.atab===tab));
+  document.getElementById('apc').style.display = tab==='overview' ? 'block' : 'none';
+  document.getElementById('apcharts').style.display = tab==='charts' ? 'block' : 'none';
+  if(tab==='charts' && !CHARTS_LOADED){ loadCharts(); }
+}
+
+async function loadCharts(){
+  const area = document.getElementById('apcharts');
+  area.innerHTML = `<div class="chart-loading">📈 Loading charts…</div>`;
+  try{
+    const meta = await(await fetch('/api/ml/charts')).json();
+    const order = ['pie','bar','scatter','line','ggplot','clusters'];
+    const titles = {
+      pie: '🥧 Pie Chart — Cuisine Distribution',
+      bar: '📊 Bar Graph — Feature Importance',
+      scatter: '🔵 Scatter Chart — Predicted vs Actual Rating',
+      line: '📈 Line Graph — Rating Prediction Across Restaurants',
+      ggplot: '📉 ggplot-style — Rating Distribution',
+      clusters: '🧩 Scatter Chart — K-Means Clusters (PCA)',
+    };
+    area.innerHTML = `<div class="chartgrid">` + order.map(name => `
+      <div class="chartcard">
+        <div class="chartcard-title" style="display:flex;align-items:center;justify-content:space-between;">
+          <span>${titles[name]||name}</span>
+          <a href="/api/ml/chart/${name}" download="${name}_chart.png"
+             style="font-size:.68rem;color:var(--red);font-weight:700;text-decoration:none;
+                    background:var(--tagbg);padding:3px 9px;border-radius:6px;">
+            ⬇️ Download
+          </a>
+        </div>
+        <img src="/api/ml/chart/${name}?t=${Date.now()}" alt="${name} chart" loading="lazy"
+             style="cursor:pointer;" onclick="window.open('/api/ml/chart/${name}','_blank')"/>
+      </div>`).join('') + `</div>`;
+    CHARTS_LOADED = true;
+  }catch(e){
+    area.innerHTML = `<div class="chart-loading">Couldn't load charts.</div>`;
+  }
+}
+
 document.getElementById("abtn").onclick=async()=>{
   const p=document.getElementById("ap");
   p.classList.toggle("open");
