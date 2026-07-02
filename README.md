@@ -19,7 +19,7 @@ Open → `http://127.0.0.1:5000`
 ## 📁 Folder Structure
 
 ```
-monaj/
+project/
 ├── app.py
 ├── restaurants_clean.json
 ├── requirements.txt
